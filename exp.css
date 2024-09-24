@@ -19,8 +19,8 @@
 .timeline-item {
   position: relative;
   margin: 10px auto; /* Centers the timeline item */
-  width: 800px;
-  padding-left: 50px; /* More space between timeline and text */
+  width: 75vw; /* Default width */
+  padding-left: 50px; /* Initial left padding */
   padding-right: 40px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -63,7 +63,6 @@
   line-height: 1.6; /* Better line spacing */
 }
 
-
 /* Sleek vertical line */
 .timeline-item::before {
   content: "";
@@ -87,10 +86,9 @@
   height: 14px; /* Keeping the circle size proportional */
   border-radius: 50%; /* Keeps the circle shape */
   background: #ffc107; /* Gradient matching your extra circles */
-    z-index: 1;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);
 }
-
 
 /* Hover effect for timeline items */
 .timeline-item:hover {
@@ -105,22 +103,21 @@
 }
 
 .timeline-item-logo {
-  position: absolute; /* Positioning relative to the timeline item */
-  left: -65px; /* Adjust as needed to align with your design */
-  top: 10px; /* Adjust to align with the title */
-  width: 40px; /* Set width of logo */
-  height: 40px; /* Maintain aspect ratio */
+  flex-shrink: 0; /* Prevent logo from shrinking */
+  width: auto; /* Allow width to be determined by content */
+  max-width: 40px; /* Maintain max width */
+  margin-right: 10px; /* Maintain space */
 }
 
 .timeline-item-logo img {
-  max-width: 30px; /* Ensure the image scales properly */
-  height: 30px; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensure it scales properly */
+  height: auto; /* Maintain aspect ratio */
 }
 
 .tile {
   position: relative;
-  width: 80px; /* You can adjust this if you want */
-  height: 80px; /* You can adjust this if you want */
+  width: 80px; /* Adjust as needed */
+  height: 80px; /* Adjust as needed */
   background: rgba(255, 255, 255, 0.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
@@ -167,6 +164,7 @@
   margin-top: 10px;
   line-height: 1.1em;
 }
+
 .experience-section {
   display: flex;
   justify-content: center; /* To center the content horizontally */
@@ -185,3 +183,98 @@
   margin-bottom: 0 !important;
   margin-top: 0px !important;
 }
+
+#one .inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#one div {
+  padding: 10px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  #one .inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #one div {
+    width: 100%;
+    margin: 0;
+  }
+
+  #one img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .timeline-item {
+    width: 90vw; /* Adjust width for medium screens */
+    padding-left: 10%; /* Responsive left padding */
+    padding-right: 20px; /* Keep right padding */
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-item {
+    width: 75vw; /* Full width on smaller screens */
+    padding-left: 15%; /* Less left padding for smaller screens */
+    padding-right: 20px; /* Keep right padding */
+  }
+  .timeline-item-logo {
+    width: 15%;
+    max-width: 30px;
+  }
+
+  .timeline-item-logo img {
+    width: 100%;
+    max-width: 10px; /* Ensure the image scales properly */
+    height: auto; /* Maintain aspect ratio */
+  }
+  .tile {
+    width: 60px; /* Adjust tile size for smaller screens */
+    height: 60px; /* Adjust tile size for smaller screens */
+  }
+
+  .tile .content .contentBx h3 {
+    font-size: 10px; /* Smaller font size for titles */
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .timeline-item-title {
+    font-size: var(--fs-6); /* Smaller font size for titles */
+  }
+
+  .timeline-item-logo {
+    width: 20%;
+    max-width: 20px;
+  }
+
+  .timeline-item .date {
+    font-size: var(--fs-7); /* Smaller font size for dates */
+  }
+
+  .timeline-text-ul li {
+    font-size: 14px; /* Smaller font size for list items */
+  }
+
+  .tile {
+    width: 50px; /* Further adjust tile size for very small screens */
+    height: 50px; /* Further adjust tile size for very small screens */
+  }
+
+  .tile .content .contentBx h3 {
+    font-size: 10px; /* Smaller font size for titles */
+  }
+}
+
