@@ -1,0 +1,61 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #2f3542;
+}
+
+.animated-text span{
+    position: relative;
+}
+
+.animated-text span::before{
+    content: "Tasfia Tabassum Katha";
+    color: #ff7f50;
+    animation: words 20s infinite;
+}
+
+.animated-text span::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    background-color: #21273e;
+    border-left: 2px solid #ff7f50;
+    right: -9px;
+    bottom: 0px;
+    animation: cursor .8s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+    to{
+        border-left: 2px solid #ff7f5000;  
+    }
+}
+
+@keyframes words {
+    0%,20%{
+        content: "Tasfia Tabassum Katha"
+    }
+    21%,40%{
+        content: "analytical"
+    }
+    41%,60%{
+        content: "curious"
+    }
+    61%,80%{
+        content: "a problem-solver"
+    }
+    81%,100%{
+        content: "a data scientist"
+    }
+}
+
+@keyframes typing {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 8px);
+    } 
+}
+

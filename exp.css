@@ -1,0 +1,187 @@
+/* General styles */
+.timeline {
+  position: relative;
+  padding: 20px 0;
+  margin-bottom: 0px;
+}
+
+/* Center the timeline and adjust list styling */
+.timeline-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  color: var(--light-gray); /* Consistent text color */
+  flex-basis: 80%;
+}
+
+/* Timeline item container centered with margin */
+.timeline-item {
+  position: relative;
+  margin: 10px auto; /* Centers the timeline item */
+  width: 800px;
+  padding-left: 50px; /* More space between timeline and text */
+  padding-right: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #242943; /* Dark background for contrast */
+  border-radius: 10px; /* Rounded corners for a softer look */
+  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+.timeline-item + .timeline-item {
+  margin-top: 0 !important; /* No margin between timeline items */
+  margin-bottom: 0 !important;
+}
+
+/* Title and subtitle styles for the timeline item */
+.timeline-item-title {
+  font-size: var(--fs-5); /* Slightly larger text for titles */
+  line-height: 1.5; /* Improved line spacing */
+  margin-bottom: 10px;
+  color: var(--text-white); /* Bright title text color */
+}
+
+/* Date style inside timeline item */
+.timeline-item .date {
+  color: var(--light-gray);
+  font-weight: var(--fw-300);
+  font-size: var(--fs-6);
+  margin-bottom: 8px; /* More space between date and content */
+}
+
+/* Text list inside timeline item */
+.timeline-text-ul {
+  color: var(--light-gray);
+  list-style-type: disc;
+  padding-left: 25px;
+}
+
+.timeline-text-ul li {
+  font-weight: var(--fw-300);
+  margin-bottom: 8px; /* Increased spacing between list items */
+  line-height: 1.6; /* Better line spacing */
+}
+
+
+/* Sleek vertical line */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 25px; /* Position of the vertical line */
+  top: 0;
+  bottom: 0;
+  width: 0.5px; /* Slightly thin, precise line */
+  background: linear-gradient(to bottom, #00BFFF, #ff0099); /* Smooth gradient for a tech look */
+  z-index: 0;
+  filter: blur(0.3px); /* Soft blur for a polished effect */
+}
+
+/* Modern and techy circle with gradient and inner glow */
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  left: 18px; /* Adjusted position for circle */
+  top: 30px; /* Circle position */
+  width: 14px; /* Slightly smaller, sharper circle */
+  height: 14px; /* Keeping the circle size proportional */
+  border-radius: 50%; /* Keeps the circle shape */
+  background: #ffc107; /* Gradient matching your extra circles */
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+
+/* Hover effect for timeline items */
+.timeline-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+/* Hover effect for circles */
+.timeline-item:hover::after {
+  background-color: #FFFFFF; /* Change circle color on hover */
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.7); /* Bright glow on hover */
+}
+
+.timeline-item-logo {
+  position: absolute; /* Positioning relative to the timeline item */
+  left: -65px; /* Adjust as needed to align with your design */
+  top: 10px; /* Adjust to align with the title */
+  width: 40px; /* Set width of logo */
+  height: 40px; /* Maintain aspect ratio */
+}
+
+.timeline-item-logo img {
+  max-width: 30px; /* Ensure the image scales properly */
+  height: 30px; /* Maintain aspect ratio */
+}
+
+.tile {
+  position: relative;
+  width: 80px; /* You can adjust this if you want */
+  height: 80px; /* You can adjust this if you want */
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(8px);
+  flex-basis: 20%;
+  padding-right: 20px;
+  align-self: flex-start;
+  margin-top: 30px;
+}
+
+.tile .content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0.8;
+  transition: 0.5s;
+  padding-left: 20px;
+}
+
+.tile .content .contentBx {
+  display: flex;
+  flex-direction: column; /* Stack image and text vertically */
+  align-items: center; /* Center align content */
+  text-align: center; /* Center text */
+}
+
+.tile:hover .content {
+  opacity: 1;
+  transform: translateY(-10px);
+}
+
+.tile .content .contentBx h3 {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+  line-height: 1.1em;
+}
+.experience-section {
+  display: flex;
+  justify-content: center; /* To center the content horizontally */
+  align-items: flex-start; /* To align both items at the top */
+  padding: 20px;
+  border: none !important;
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+}
+
+.experience-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  border: none !important;
+  margin-bottom: 0 !important;
+  margin-top: 0px !important;
+}
