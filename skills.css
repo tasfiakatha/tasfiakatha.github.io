@@ -51,13 +51,14 @@ section {
     color: white;
 }
 
+/* Default large screen styling */
 section::before {
     content: '';
     position: absolute;
     top: 0;
     right: 20%;
-    width: 280px;
-    height: 280px;
+    width: 21.75vw;
+    height: 50vh;
     background: linear-gradient(#00BFFF, rgb(255, 0, 123));
     clip-path: circle(30% at right 70%);
 }
@@ -67,20 +68,19 @@ section::after {
     position: absolute;
     top: 10%;
     left: 20%;
-    width: 335px;
-    height: 335px;
+    width: 26.02vw;
+    height: 59.82vh;
     background: linear-gradient(#2196f3, #e91e63);
     clip-path: circle(20% at 10% 20%);
     z-index: -1;
-    
 }
 
 section .extra-circle-1 {
     position: absolute;
     top: 50%;
     left: 30%;
-    width: 100px;
-    height: 100px;
+    width: 7.767vw;
+    height: 17.857vh;
     background: linear-gradient(#ff0099, #ff6699);
     clip-path: circle(50% at 50% 50%);
 }
@@ -89,13 +89,69 @@ section .extra-circle-2 {
     position: absolute;
     bottom: 50%;
     right: 35%;
-    width: 120px;
-    height: 120px;
+    width: 9.321vw;
+    height: 21.428vh;
     background: linear-gradient(#00FFFF, #ff6699);
     clip-path: circle(50% at 50% 50%);
 }
 
+/* Media queries for responsiveness */
 
+/* For tablet screens */
+@media screen and (max-width: 768px) {
+    section::before {
+        top: 5%;
+        right: 15%; /* Adjust position for smaller screens */
+    }
+
+    section::after {
+        top: 10%;
+        left: 15%; /* Adjust position for smaller screens */
+    }
+
+    section .extra-circle-1 {
+        top: 60%; /* Shift down slightly */
+        left: 20%; /* Move towards the left */
+        width: 14vw;
+        height: 14vh;
+    }
+
+    section .extra-circle-2 {
+        bottom: 50%;
+        right: 30%; /* Adjust to fit screen */
+        width: 21vw;
+        height: 21vh;
+    }
+}
+
+/* For mobile screens */
+@media screen and (max-width: 480px) {
+    section::before {
+        top: 10%;
+        right: 10%; /* Further adjust for small screens */
+    }
+
+    section::after {
+        top: 20%;
+        left: 10%; /* Further adjust for small screens */
+    }
+
+    section .extra-circle-1 {
+        top: 70%; /* Adjust for smaller height */
+        left: 20%; /* Shift for better visibility */
+        width: 8.75vw;
+        height: 8.75h;
+    }
+
+    section .extra-circle-2 {
+        bottom: 60%;
+        right: 25%; /* Shift to stay on screen */
+        width: 13.125vw;
+        height: 13.125vh;
+    }
+}
+
+/* Tile layout remains the same */
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -144,21 +200,6 @@ section .extra-circle-2 {
     opacity: 1;
     transform: translateY(-10px);
 }
-/*
-.tile .content .imgBx {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 0px solid rgba(0, 0, 0, 0.25);
-}
-
-.tile .content .imgBx img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-*/
 
 .tile .content .contentBx h3 {
     color: #fff;

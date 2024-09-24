@@ -54,8 +54,8 @@ section::before {
     position: absolute;
     top: 0;
     right: 10%;
-    width: 600px;
-    height: 600px;
+    width: 46.607vw;
+    height: 107.143vh;
     background: linear-gradient(#00BFFF, rgb(255, 0, 123));
     clip-path: circle(30% at right 70%);
 }
@@ -65,8 +65,8 @@ section::after {
     position: absolute;
     top: 0;
     left: 10%;
-    width: 700px;
-    height: 700px;
+    width: 54.375vw;
+    height: 125vh;
     background: linear-gradient(#2196f3, #e91e63);
     clip-path: circle(20% at 10% 20%);
 }
@@ -75,8 +75,8 @@ section .extra-circle-1 {
     position: absolute;
     top: 50%;
     left: 30%;
-    width: 250px;
-    height: 250px;
+    width: 19.4196vw;
+    height: 44.6429vh;
     background: linear-gradient(#ff0099, #ff6699);
     clip-path: circle(50% at 50% 50%);
 }
@@ -85,8 +85,8 @@ section .extra-circle-2 {
     position: absolute;
     bottom: 20%;
     right: 10%;
-    width: 250px;
-    height: 250px;
+    width: 19.4196vw;
+    height: 44.6429vh;
     background: linear-gradient(#00FFFF, #ff6699);
     clip-path: circle(50% at 50% 50%);
 }
@@ -192,4 +192,56 @@ section .extra-circle-2 {
     font-size: 24px;
 }
 
+/* For tablet screens */
+@media screen and (max-width: 768px) {
+    section::before {
+        top: 3%;
+        right: 16.1%; /* Adjust position for smaller screens */
+    }
 
+    section::after {
+        top: 0%;
+        left: 16.2%; /* Adjust position for smaller screens */
+    }
+
+    section .extra-circle-1 {
+        top: 65%; /* Shift down slightly */
+        left: 20%; /* Move towards the left */
+        width: 25vw;
+        height: 20vh;
+    }
+
+    section .extra-circle-2 {
+        bottom: 65.2%;
+        right: 30%; /* Adjust to fit screen */
+        width: 35vw;
+        height: 30vh;
+    }
+}
+
+/* For mobile screens */
+@media screen and (max-width: 480px) {
+    section::before {
+        top: 10%;
+        right: 11.2%; /* Further adjust for small screens */
+    }
+
+    section::after {
+        top: 8%;
+        left: 11.2%; /* Further adjust for small screens */
+    }
+
+    section .extra-circle-1 {
+        top: 75%; /* Adjust for smaller height */
+        left: 30%; /* Shift for better visibility */
+        width: 8.75vw;
+        height: 8.75h;
+    }
+
+    section .extra-circle-2 {
+        bottom: 70%;
+        right: 25%; /* Shift to stay on screen */
+        width: 13.125vw;
+        height: 13.125vh;
+    }
+}
